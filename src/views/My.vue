@@ -1,6 +1,6 @@
 <template>
   <div>
-    홈페이지
+    My
   </div>
 </template>
 

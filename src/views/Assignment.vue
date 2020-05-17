@@ -1,6 +1,6 @@
 <template>
   <div>
-    홈페이지
+    과제 페이지
   </div>
 </template>
 

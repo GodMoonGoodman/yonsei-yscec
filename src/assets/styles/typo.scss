@@ -1,0 +1,46 @@
+$semi-bold: 600;
+$regular: 400;
+
+h1 {
+  font-size: 28px;
+  font-weight: $semi-bold;
+}
+
+h2 {
+  font-size: 23px;
+  font-weight: $semi-bold;
+}
+
+h3 {
+  font-size: 21px;
+  font-weight: $semi-bold;
+}
+
+h4 {
+  font-size: 17px;
+  font-weight: $semi-bold;
+}
+
+h5 {
+  font-size: 14px;
+  font-weight: $semi-bold;
+}
+
+h6 {
+  font-size: 11px;
+  font-weight: $semi-bold;
+}
+
+.f5 {
+  font-size: 14px;
+  font-weight: $regular;
+}
+
+.f6 {
+  font-size: 12px;
+  font-weight: $regular;
+}
+
+.text-bold {
+  font-weight: $semi-bold;
+}

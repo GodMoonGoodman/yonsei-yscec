@@ -1,0 +1,26 @@
+$grey-dark: 6 #1c1c1e, 5 #2c2c2e, 4 #3a3a3c, 3 #48484a, 2 #636366, 1 #f2f2f7;
+
+$grey-light: 6 #f2f2f7, 5 #e5e5ea, 4 #d1d1d6, 3 #c7c7cc, 2 #aeaeb2, 1 #8e8e93;
+
+$disable-dark: #757575;
+$disable-light: #999999;
+
+@each $degree, $color in $grey-dark {
+  .font-color-dark-#{$degree}00 {
+    color: $color;
+  }
+}
+
+.font-color-dark-muted {
+  color: $disable-dark;
+}
+
+@each $degree, $color in $grey-light {
+  .font-color-light-#{$degree}00 {
+    color: $color;
+  }
+}
+
+.font-color-light-muted {
+  color: $disable-light;
+}

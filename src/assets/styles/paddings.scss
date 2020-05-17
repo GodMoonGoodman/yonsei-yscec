@@ -1,0 +1,14 @@
+$paddings: 1 4px, 2 8px, 3 16px, 4 24px, 5 32px, 6 48px, 7 56px, 8 64px, 9 72px,
+  10 80px;
+$position: "" "", "b" "-bottom", "t" "-top", "l" "-left", "r" "-right";
+
+@each $deg, $pad in $paddings {
+  @each $short, $full in $position {
+    .p#{$short}-#{$deg} {
+      padding#{$full}: $pad;
+    }
+    .m#{$short}-#{$deg} {
+      margin#{$full}: $pad;
+    }
+  }
+}
