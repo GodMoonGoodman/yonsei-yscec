@@ -1,6 +1,8 @@
 <template>
-  <button class="tab d-flex justify-content-center align-item-center" :class="computedClass">
-    <div class="tab-icon">icon</div>
+  <button
+    class="tab d-flex justify-content-center align-item-center"
+    :class="computedClass"
+  >
     <div class="tab-label">{{ label }}</div>
   </button>
 </template>
@@ -10,18 +12,18 @@ export default {
   props: {
     icon: {
       type: String,
-      default: ""
+      default: "",
     },
     label: String,
-    routeName: String
+    routeName: String,
   },
   computed: {
     computedClass() {
       return {
-        active: this.$route.name === this.routeName
+        active: this.$route.name === this.routeName,
       };
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -32,16 +34,19 @@ export default {
   height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  outline: none;
+  background-color: #363a3c;
+  color: rgba(255, 255, 255, 0.4);
   &.active {
     font-weight: bold;
+    color: #fff;
   }
-  &-icon,
   &-label {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 17px;
   }
 }
 </style>

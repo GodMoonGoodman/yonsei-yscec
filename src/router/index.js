@@ -7,7 +7,7 @@ import Article from "../views/Article.vue";
 
 import Assignment from "../views/Assignment.vue";
 import ClassList from "../views/ClassList.vue";
-import My from "../views/My.vue";
+import Schedule from "../views/Schedule.vue";
 
 Vue.use(VueRouter);
 
@@ -32,9 +32,9 @@ const routes = [
         component: ClassList,
       },
       {
-        name: "My",
-        path: "/my",
-        component: My,
+        name: "Schedule",
+        path: "/schedule",
+        component: Schedule,
       },
     ],
   },

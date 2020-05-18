@@ -10,14 +10,14 @@ export default {};
 
 <style lang="scss" scoped>
 .tabbar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  /* position: sticky; */
+  /* top: 60px; */
+  /* left: 0; */
   width: 100%;
 
   display: flex;
   justify-content: space-around;
-  height: 48px;
+  height: 51px;
   align-items: center;
 
   border-top: 1px solid #707070;

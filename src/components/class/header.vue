@@ -1,5 +1,5 @@
 <template>
-  <div class="header p-4">
+  <div class="header p-4" :style="bgStyle">
     <div>
       <button class="back" @click="$router.go(-1)"></button>
     </div>
@@ -24,6 +24,15 @@ export default {
     tags: {
       type: Array,
     },
+    bgImg: String,
+  },
+  computed: {
+    bgStyle() {
+      if (!this.bgImg) return {};
+      return {
+        backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url('${this.bgImg}')`,
+      };
+    },
   },
 };
 </script>
@@ -32,13 +41,17 @@ export default {
 .header {
   button.back {
     background-image: url("../../assets/back.svg");
-    background-color: #343434;
+
+    background-color: transparent;
     border: none;
     background-size: 24px;
     background-repeat: no-repeat;
     width: 24px;
     height: 24px;
   }
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: #343434;
   color: white;
 }

@@ -1,3 +1,9 @@
+import html from "../assets/images/html5.png";
+import Beethoven from "../assets/images/Beethoven.jpg";
+import Olympic_rings_with_transparent_rims from "../assets/images/Olympic_rings_with_transparent_rims.svg.png";
+import ML from "../assets/images/1_k5LiTi5lt_ND02kaBT_SAA.jpeg";
+import p1_Soc from "../assets/images/p1_Soc.jpg";
+
 const study = [
   {
     id: 0,
@@ -16,6 +22,7 @@ const study = [
         contact: "park9511@yonsei.ac.kr",
       },
     ],
+    img: html,
   },
   {
     id: 1,
@@ -39,6 +46,7 @@ const study = [
         contact: "hjw@yonsei.ac.kr",
       },
     ],
+    img: ML,
   },
   {
     id: 2,
@@ -52,6 +60,7 @@ const study = [
         contact: "example@yonsei.ac.kr",
       },
     ],
+    img: Beethoven,
   },
   {
     id: 3,
@@ -65,11 +74,12 @@ const study = [
         contact: "shoon@yonsei.ac.kr",
       },
     ],
+    img: Olympic_rings_with_transparent_rims,
   },
   {
     id: 4,
     title: "현대사회와사회학",
-    tags: ["사회과학대학", "사회학", "필수고양"],
+    tags: ["사회과학대학", "사회학", "필수교양"],
     oh: false,
     teachers: [
       {
@@ -78,6 +88,7 @@ const study = [
         contact: "sunmicho@yonsei.ac.kr",
       },
     ],
+    img: p1_Soc,
   },
 ];
 

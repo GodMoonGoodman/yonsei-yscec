@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :title="title" :tags="tags" />
+    <Header :title="title" :tags="tags" :bgImg="study.img" />
     <Notification v-if="oh" class="mt-4" text="지금은 오피스 아워입니다." />
     <div class="p-4">
       <Contact
@@ -30,7 +30,7 @@
     <div class="p-4">
       <List title="과제 📚" class="notice-list">
         <ListItem
-          v-for="(assignment) in assignments"
+          v-for="assignment in assignments"
           :key="assignment.id"
           :title="assignment.title"
           :sub-title="assignment.content"
@@ -56,7 +56,7 @@ export default {
     Contact,
     List,
     ListItem,
-    Notification
+    Notification,
   },
   data() {
     return {
@@ -65,28 +65,30 @@ export default {
       tags: [],
       notices: [],
       assignments: [],
-      oh: false
+      oh: false,
+      study: null,
     };
   },
   created() {
     const study_id = this.$route.params.id;
-    const study = this.$db.study.find(study => study.id === +study_id);
+    const study = this.$db.study.find((study) => study.id === +study_id);
+    this.study = study;
     this.title = study.title;
     this.contacts = study.teachers;
     this.tags = study.tags;
     this.oh = study.oh;
     this.notices = this.$db.notice
-      .filter(notice => notice.class_name === study.title)
-      .map(notice => {
+      .filter((notice) => notice.class_name === study.title)
+      .map((notice) => {
         notice.content = notice.content.replace("/\\n/gi", "");
         return notice;
       })
       .splice(0, 3);
 
     this.assignments = this.$db.assignment
-      .filter(assignment => assignment.class_name === study.title)
+      .filter((assignment) => assignment.class_name === study.title)
       .splice(0, 3);
-  }
+  },
 };
 </script>
 

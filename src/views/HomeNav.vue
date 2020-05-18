@@ -1,16 +1,16 @@
 <template>
   <div class="home-nav">
-    <router-view />
-    <TabBar>
+    <TabBar uk-sticky>
       <Tab
         v-for="(tab, index) in tabs"
         :key="index"
-        icon=""
+        icon
         :label="tab.label"
         :route-name="tab.routeName"
         @click.native="$router.push({ name: tab.routeName })"
       />
     </TabBar>
+    <router-view />
   </div>
 </template>
 
@@ -39,9 +39,9 @@ export default {
           routeName: "ClassList",
         },
         {
-          label: "내정보",
+          label: "시간표",
           icon: "",
-          routeName: "My",
+          routeName: "Schedule",
         },
       ],
     };
