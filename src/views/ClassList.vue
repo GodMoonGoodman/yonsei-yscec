@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-for="(study, idx) in studies" :key="idx">
-      <CardHeader :text="study.semester" />
+      <CardHeader :text="study.semester" uk-sticky="bottom: true;offset:50px" style="z-index: 9;" />
       <div class="card-group">
         <router-link
           class="card pl-4 pr-4 pt-3 pb-3"
@@ -9,11 +9,7 @@
           :key="index"
           :to="{ name: 'class-id', params: { id: study.id } }"
         >
-          <Card
-            :title="study.title"
-            :sub-title="study.teachers[0].name"
-            :img="study.img"
-          />
+          <Card :title="study.title" :sub-title="study.teachers[0].name" :img="study.img" />
         </router-link>
       </div>
     </div>
@@ -25,36 +21,36 @@
 import CardHeader from "@/components/common/cardHeader";
 import Card from "@/components/common/card";
 
-const promise1 = () => {
-  return new Promise(function(resolve) {
-    // 비동기를 표현하기 위해 setTimeout 함수를 사용
-    window.setTimeout(function() {
-      // 해결됨
-      resolve();
-    }, 500);
-  });
-};
+// const promise1 = () => {
+//   return new Promise(function(resolve) {
+//     // 비동기를 표현하기 위해 setTimeout 함수를 사용
+//     window.setTimeout(function() {
+//       // 해결됨
+//       resolve();
+//     }, 500);
+//   });
+// };
 
 export default {
   components: {
     Card,
-    CardHeader,
+    CardHeader
   },
   data() {
     return {
       studies: [],
       lastSemester: {
         year: 2019,
-        hakgi: 2,
+        hakgi: 2
       },
       sortedStudies: [
         {
           semester: "2020년 1학기",
-          classes: (this.sortedStudies = this.$db.study),
-        },
+          classes: (this.sortedStudies = this.$db.study)
+        }
       ],
       observer: null,
-      loading: false,
+      loading: false
     };
   },
   created() {
@@ -67,9 +63,9 @@ export default {
   mounted() {
     this.pushSemester(this.lastSemester);
 
-    this.observer = new IntersectionObserver((entries) => {
+    this.observer = new IntersectionObserver(entries => {
       if (this.loading) return;
-      entries.forEach((entry) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           this.getBeforeSemester();
           this.pushSemester(this.lastSemester);
@@ -82,10 +78,10 @@ export default {
   methods: {
     async pushSemester(semester) {
       this.loading = true;
-      await promise1();
+      // await promise1();
       this.studies.push({
         semester: `${semester.year}년 ${semester.hakgi}학기`,
-        classes: this.sortedStudies,
+        classes: this.sortedStudies
       });
 
       this.loading = false;
@@ -98,8 +94,8 @@ export default {
         lastSemester.year = lastSemester.year - 1;
         lastSemester.hakgi = 2;
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

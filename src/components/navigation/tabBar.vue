@@ -17,9 +17,9 @@ export default {};
 
   display: flex;
   justify-content: space-around;
-  height: 51px;
+  height: 50px;
   align-items: center;
 
-  border-top: 1px solid #707070;
+  /* border-top: 1px solid #707070; */
 }
 </style>

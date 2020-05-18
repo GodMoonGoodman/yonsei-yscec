@@ -1,6 +1,6 @@
 <template>
   <div class="home-nav">
-    <TabBar uk-sticky>
+    <TabBar uk-sticky style="z-index: 10;">
       <Tab
         v-for="(tab, index) in tabs"
         :key="index"
@@ -26,25 +26,25 @@ export default {
         {
           label: "홈",
           icon: "",
-          routeName: "Home",
+          routeName: "Home"
         },
         {
           label: "과제",
           icon: "",
-          routeName: "Assignment",
+          routeName: "Assignment"
         },
         {
           label: "강의",
           icon: "",
-          routeName: "ClassList",
+          routeName: "ClassList"
         },
         {
           label: "시간표",
           icon: "",
-          routeName: "Schedule",
-        },
-      ],
+          routeName: "Schedule"
+        }
+      ]
     };
-  },
+  }
 };
 </script>

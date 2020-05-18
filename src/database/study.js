@@ -3,6 +3,7 @@ import Beethoven from "../assets/images/Beethoven.jpg";
 import Olympic_rings_with_transparent_rims from "../assets/images/Olympic_rings_with_transparent_rims.svg.png";
 import ML from "../assets/images/1_k5LiTi5lt_ND02kaBT_SAA.jpeg";
 import p1_Soc from "../assets/images/p1_Soc.jpg";
+import phy from "../assets/images/223AC33F5592829D20.jpeg";
 
 const study = [
   {
@@ -23,6 +24,7 @@ const study = [
       },
     ],
     img: html,
+    time: ["월3", "월4", "수3"],
   },
   {
     id: 1,
@@ -47,6 +49,7 @@ const study = [
       },
     ],
     img: ML,
+    time: ["화1", "화2", "목1"],
   },
   {
     id: 2,
@@ -61,6 +64,7 @@ const study = [
       },
     ],
     img: Beethoven,
+    time: ["월1", "월2", "수1"],
   },
   {
     id: 3,
@@ -75,6 +79,7 @@ const study = [
       },
     ],
     img: Olympic_rings_with_transparent_rims,
+    time: ["수7", "금4", "금5"],
   },
   {
     id: 4,
@@ -89,6 +94,22 @@ const study = [
       },
     ],
     img: p1_Soc,
+    time: ["금1", "금2", "수8"],
+  },
+  {
+    id: 5,
+    title: "현대사회와심리학",
+    tags: ["문과대학", "심리학", "필수교양"],
+    oh: false,
+    teachers: [
+      {
+        name: "윤소연",
+        roll: "교수",
+        contact: "so@yonsei.ac.kr",
+      },
+    ],
+    img: phy,
+    time: ["금1", "금2", "수8"],
   },
 ];
 
